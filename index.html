@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+Project: PROG 5075 ASSIGNMENT 4 - Georgina WebApp
+Title: index.html
+Purpose: Web Map of Georgina, Ontario
+Author: Emily Holdsworth
+Date: March 2021
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- links to open layers and local script and css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/samples.css" type="text/css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js"></script>
+    <title>Georgina, Ontario</title>
+</head>
+
+<body onload="init()"> <!-- when page loads, run function onit() in script.js-->
+    <!-- div containing the web map header: title and logo -->
+    <div id="header" class="header">
+        <H1>Georgina, Ontario</H1>
+        <img id="cogslogo" class="cogslogo" src="images/DqrhdDUWoAMwXus.png" />
+    </div>
+    <!-- div containing the map scene -->
+    <div id="map" class="map"></div>
+
+    <!-- div containing the footer: credits and coordinates -->
+    <div id="footer" class="footer">
+        <div id="footer2" class="footer2"> <!-- second div to create buffer from edges without disturbing vertical centred text-->
+            <!-- credits -->
+            <p class="alignleft">&#169; Emily Holdsworth</p>
+            <!-- coordinates text and mousePosition -->
+            <p class="aligncentre">Coordinates (longitude, latitude): </p>
+            <p id="myposition" class="mousey"></p>
+            <!-- Credits -->
+            <p class="alignright">COGS | March 2021</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+</body>
+</html>
