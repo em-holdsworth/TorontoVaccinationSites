@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
-Project: PROG 5075 ASSIGNMENT 4 - Georgina WebApp
+Project: PROG 5075 ASSIGNMENT 5 - Covid-19 Vaccination Clinics Toronto
 Title: index.html
-Purpose: Web Map of Georgina, Ontario
+Purpose: WebMap using Leaflet
 Author: Emily Holdsworth
 Date: March 2021
 -->
@@ -10,28 +10,37 @@ Date: March 2021
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>COVID Vaccination Toronto</title>
     <!-- links to open layers and local script and css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/samples.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/script.js"></script>
-    <title>Georgina, Ontario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+
+    <script src="scripts/CityWardsData.js"></script>
+    <script src="scripts/covid-19-immunization-clinics.js"></script>
+
+
 </head>
 
 <body onload="init()"> <!-- when page loads, run function onit() in script.js-->
     <!-- div containing the web map header: title and logo -->
     <div id="header" class="header">
-        <H1>Georgina, Ontario</H1>
-        <img id="cogslogo" class="cogslogo" src="images/DqrhdDUWoAMwXus.png" />
+        <H1>COVID-19 Vaccination Clinics, Toronto</H1>
+        <a class = "links" href = "https://www.nscc.ca/explorenscc/campuses/cogs/" title="NSCC COGS Website" target="_blank">
+            <img id="cogslogo" class="cogslogo" src="images/COGS_LOGO.jpg" />
+        </a>
     </div>
     <!-- div containing the map scene -->
-    <div id="map" class="map"></div>
+    <div id="mapid"></div>
 
     <!-- div containing the footer: credits and coordinates -->
     <div id="footer" class="footer">
         <div id="footer2" class="footer2"> <!-- second div to create buffer from edges without disturbing vertical centred text-->
             <!-- credits -->
-            <p class="alignleft">&#169; Emily Holdsworth</p>
+            <p class="alignleft">&#169; <a class = "links" href="https://arcg.is/1LDK4O0" title = "Emily's Portfolio" target="_blank">Emily Holdsworth</a></p>
             <!-- coordinates text and mousePosition -->
             <p class="aligncentre">Coordinates (longitude, latitude): </p>
             <p id="myposition" class="mousey"></p>
@@ -39,6 +48,11 @@ Date: March 2021
             <p class="alignright">COGS | March 2021</p>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src="scripts/script.js"></script>
+
 </body>
 </html>
