@@ -1,4 +1,4 @@
-# em-holdsworth.github.io
+# Toronto Vaccination Sites
 Toronto Vaccination Clinic Website
 *Data Sources*
 1. City of Toronto [Wards](https://open.toronto.ca/dataset/city-wards/)
